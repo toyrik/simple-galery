@@ -1,3 +1,9 @@
-<?php include __DIR__ . '/../components/header.php'?>
+<?php
+/**
+ * @var \App\Kernel\View\View $view
+ */
+?>
+
+<?php $view->component('header')?>
     <h1>Homepage</h1>
-<?php include __DIR__ . '/../components/footer.php'?>
+<?php $view->component('footer')?>
