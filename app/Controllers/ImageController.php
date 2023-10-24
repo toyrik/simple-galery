@@ -11,6 +11,6 @@ class ImageController extends \App\Kernel\Controller\Controller
 
     public function store()
     {
-       dd($this->request());
+       dd($this->request()->input('title'));
     }
 }
