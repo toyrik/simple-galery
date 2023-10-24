@@ -2,15 +2,20 @@
 
 namespace App\Controllers;
 
+use App\Kernel\View\View;
+
 class GalleryController
 {
     public function index(): void
     {
-        include_once APP_PATH . '/views/pages/galleries.php';
+        $view = new View();
+        $view->page('galleries');
     }
 
     public function show(): void
     {
-        include_once APP_PATH . '/views/pages/gallery.php';
+
+        $view = new View();
+        $view->page('gallery');
     }
 }
