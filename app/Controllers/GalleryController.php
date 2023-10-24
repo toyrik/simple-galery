@@ -2,20 +2,18 @@
 
 namespace App\Controllers;
 
+use App\Kernel\Controller\Controller;
 use App\Kernel\View\View;
 
-class GalleryController
+class GalleryController extends Controller
 {
     public function index(): void
     {
-        $view = new View();
-        $view->page('galleries');
+        $this->view('galleries');
     }
 
     public function show(): void
     {
-
-        $view = new View();
-        $view->page('gallery');
+        $this->view('gallery');
     }
 }
