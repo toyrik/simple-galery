@@ -1,0 +1,12 @@
+{
+    "name": "toyrik/simple-galery-site",
+    "type": "project",
+    "license": "WTFPL",
+    "authors": [
+        {
+            "name": "y"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
