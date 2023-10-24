@@ -1,7 +1,7 @@
 <?php
 
-use App\Router\Route;
 use App\Controllers;
+use App\Kernel\Router\Route;
 
 return [
     Route::get('/', [Controllers\HomeController::class, 'index']),

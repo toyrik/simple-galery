@@ -1,5 +1,6 @@
 <?php
-use App\App;
+
+use App\Kernel\App;
 
 const APP_PATH = __DIR__ . '/..';
 
