@@ -7,7 +7,6 @@ return [
     Route::get('/', [Controllers\HomeController::class, 'index']),
     Route::get('/galleries', [Controllers\GalleryController::class, 'index']),
     Route::get('/gallery', [Controllers\GalleryController::class, 'show']),
-    Route::get('/test', function (){
-        echo 'test';
-    }),
+    Route::get('/admin/images/add', [Controllers\ImageController::class, 'add']),
+    Route::post('/admin/images/add', [Controllers\ImageController::class, 'store']),
 ];
