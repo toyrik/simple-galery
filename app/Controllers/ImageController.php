@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Kernel\Http\Redirect;
+
 class ImageController extends \App\Kernel\Controller\Controller
 {
     public function add()
@@ -16,7 +18,7 @@ class ImageController extends \App\Kernel\Controller\Controller
         );
 
         if (! $validation) {
-            dd('Validation failed', $this->request()->errors());
+            $this->redirect('/admin/images/add');
         }
 
         dd('Validation passed');
