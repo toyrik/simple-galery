@@ -14,8 +14,7 @@ class Request
         public readonly array $server,
         public readonly array $files,
         public readonly array $cookies,
-    )
-    {
+    ) {
     }
 
     public static function createFromGlobals(): static
@@ -34,7 +33,7 @@ class Request
         return strtok($this->server['REQUEST_URI'], '?');
     }
 
-    public function method():string
+    public function method(): string
     {
         return $this->server['REQUEST_METHOD'];
     }
@@ -44,7 +43,7 @@ class Request
         return $this->post[$key] ?? $this->get[$key] ?? $default;
     }
 
-    public function setValidator(Validator  $validator): void
+    public function setValidator(Validator $validator): void
     {
         $this->validator = $validator;
     }
@@ -57,7 +56,7 @@ class Request
             $data[$field] = $this->input($field);
         }
 
-        return$this->validator->validate($data,$rules);
+        return $this->validator->validate($data, $rules);
     }
 
     public function errors(): array

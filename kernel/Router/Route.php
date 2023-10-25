@@ -5,11 +5,12 @@ namespace App\Kernel\Router;
 class Route
 {
     private $uri;
+
     private $method;
 
     private $action;
 
-    public function __construct(string $uri,string $method, $action)
+    public function __construct(string $uri, string $method, $action)
     {
         $this->uri = $uri;
         $this->method = $method;

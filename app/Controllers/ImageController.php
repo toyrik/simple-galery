@@ -2,8 +2,6 @@
 
 namespace App\Controllers;
 
-use App\Kernel\Validator\Validator;
-
 class ImageController extends \App\Kernel\Controller\Controller
 {
     public function add()
@@ -13,7 +11,6 @@ class ImageController extends \App\Kernel\Controller\Controller
 
     public function store()
     {
-
         $validation = $this->request()->validate(
             ['title' => ['required', 'min:3', 'max:255']]
         );

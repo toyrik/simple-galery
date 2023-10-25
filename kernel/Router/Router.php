@@ -8,7 +8,7 @@ use App\Kernel\View\View;
 
 class Router
 {
-    private array  $routes = [
+    private array $routes = [
         'GET' => [],
         'POST' => [],
     ];
@@ -16,8 +16,7 @@ class Router
     public function __construct(
         private View $view,
         private Request $request
-    )
-    {
+    ) {
         $this->initRoutes();
     }
 
@@ -25,7 +24,7 @@ class Router
     {
         $route = $this->findeRoute($uri, $method);
 
-        if (!$route) {
+        if (! $route) {
             $this->notFound();
         }
 
@@ -51,9 +50,10 @@ class Router
 
     private function findeRoute(string $uri, string $method): Route|false
     {
-        if(!isset($this->routes[$method][$uri])) {
+        if (! isset($this->routes[$method][$uri])) {
             return false;
         }
+
         return $this->routes[$method][$uri];
     }
 
@@ -61,7 +61,7 @@ class Router
     {
         $routes = $this->getRoutes();
 
-        foreach ($routes as $route){
+        foreach ($routes as $route) {
             $this->routes[$route->getMethod()][$route->getUri()] = $route;
         }
     }

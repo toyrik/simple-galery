@@ -59,7 +59,7 @@ class Validator
                 }
                 break;
             case 'email':
-                if (! filter_var($value,FILTER_VALIDATE_EMAIL)) {
+                if (! filter_var($value, FILTER_VALIDATE_EMAIL)) {
                     return "Field $key must be a valid email address";
                 }
                 break;
