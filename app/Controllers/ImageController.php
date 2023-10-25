@@ -18,6 +18,10 @@ class ImageController extends \App\Kernel\Controller\Controller
         );
 
         if (! $validation) {
+            foreach ($this->request()->errors() as $field => $errors) {
+
+                $this->session()->set($field, $errors);
+            }
             $this->redirect('/admin/images/add');
         }
 
