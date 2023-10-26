@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Kernel\Controller\Controller;
 
-class RegisterCintroller extends Controller
+class RegisterController extends Controller
 {
     public function index()
     {

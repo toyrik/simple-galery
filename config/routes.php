@@ -9,6 +9,8 @@ return [
     Route::get('/gallery', [Controllers\GalleryController::class, 'show']),
     Route::get('/admin/images/add', [Controllers\ImageController::class, 'add']),
     Route::post('/admin/images/add', [Controllers\ImageController::class, 'store']),
-    Route::get('/register', [Controllers\RegisterCintroller::class, 'index']),
-    Route::post('/register', [Controllers\RegisterCintroller::class, 'register']),
+    Route::get('/register', [Controllers\RegisterController::class, 'index']),
+    Route::post('/register', [Controllers\RegisterController::class, 'register']),
+    Route::get('/login', [Controllers\LoginController::class, 'index']),
+    Route::post('/login', [Controllers\LoginController::class, 'login']),
 ];
