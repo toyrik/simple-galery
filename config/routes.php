@@ -9,4 +9,6 @@ return [
     Route::get('/gallery', [Controllers\GalleryController::class, 'show']),
     Route::get('/admin/images/add', [Controllers\ImageController::class, 'add']),
     Route::post('/admin/images/add', [Controllers\ImageController::class, 'store']),
+    Route::get('/register', [Controllers\RegisterCintroller::class, 'index']),
+    Route::post('/register', [Controllers\RegisterCintroller::class, 'register']),
 ];
