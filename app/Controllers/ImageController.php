@@ -2,8 +2,6 @@
 
 namespace App\Controllers;
 
-use App\Kernel\Http\Redirect;
-
 class ImageController extends \App\Kernel\Controller\Controller
 {
     public function add()

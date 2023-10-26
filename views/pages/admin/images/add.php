@@ -1,7 +1,7 @@
 <?php
 /**
  * @var \App\Kernel\View\View $view
- * @var \App\Kernel\Session\Session $session
+ * @var \App\Kernel\Session\SessionInterface $session
  */
 ?>
 
