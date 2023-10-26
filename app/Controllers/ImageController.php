@@ -23,6 +23,10 @@ class ImageController extends \App\Kernel\Controller\Controller
             $this->redirect('/admin/images/add');
         }
 
-        dd('Validation passed');
+        $id = $this->db()->insert('images',[
+            'title' => $this->request()->input('title'),
+        ]);
+
+        dd('Image added successfully with id: ' . $id);
     }
 }
