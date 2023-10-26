@@ -15,9 +15,8 @@ class RegisterController extends Controller
     {
         $validated = $this->request()->validate([
             'email' => ['required', 'email'],
-            'password' => ['required', 'min:8']
+            'password' => ['required', 'min:8'],
         ]);
-
 
         if (! $validated) {
             foreach ($this->request()->errors() as $field => $errors) {
@@ -27,9 +26,9 @@ class RegisterController extends Controller
             $this->redirect('/register');
         }
 
-        $userId = $this->db()->insert('users',[
+        $userId = $this->db()->insert('users', [
             'email' => $this->request()->input('email'),
-            'password' => password_hash($this->request()->input('password'), PASSWORD_DEFAULT)
+            'password' => password_hash($this->request()->input('password'), PASSWORD_DEFAULT),
         ]);
 
         dd('User successfully register with id: '.$userId);
