@@ -38,14 +38,4 @@ $user = $auth->user();
                 <?php } ?>
         </div>
     </nav>
-    <header class="row">
-        <div class="col">
-            <ul class="navbar-nav">
-            </ul>
-        </div>
-        <div class="col">
-            <div class="text-end">
-            </div>
-        </div>
-    </header>
 </div>
