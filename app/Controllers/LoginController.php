@@ -13,8 +13,12 @@ class LoginController extends \App\Kernel\Controller\Controller
     {
         $email = $this->request()->input('email');
         $password = $this->request()->input('password');
-        $this->auth()->attempt($email, $password);
-        $this->redirect('/');
+        if($this->auth()->attempt($email, $password)) {
+            $this->redirect('/');
+        }
+
+        $this->session()->set('error', 'Неверный логин или пароль');
+        $this->redirect('/login');
     }
 
     public function logout()

@@ -7,23 +7,25 @@
 
 <?php $view->component('header')?>
 <h1>Вход</h1>
+
+<?php if ($session->has('error')) {?>
+    <p style="color: red">
+        <?php echo $session->getFlash('error');?>
+    </p>
+<?php } ?>
+
 <form action="/login" method="post">
-    <?php if ($session->has('error')) {?>
-        <p style="color: red">
-            <?php $session->getFlash('error') ?>
-        </p>
-    <?php } ?>
-    <label for="email">Email</label>
-    <div>
+    <div class="mb-5">
+        <label for="email">Email</label>
         <input type="text" name="email">
     </div>
-    <div>
+    <div class="mb-5">
         <label for="password">Password</label>
-        <div>
-            <input type="password" name="password">
-        </div>
-        <div>
-            <button type="submit">Войти</button>
-        </div>
+        <input type="password" name="password">
+    </div>
+    <div>
+        <button type="submit">Войти</button>
+    </div>
+
 </form>
 <?php $view->component('footer')?>
