@@ -7,7 +7,7 @@
 
 <?php $view->component('header')?>
     <h1>Add image</h1>
-<form action="/admin/images/add" method="post">
+<form action="/admin/images/add" method="post" enctype="multipart/form-data">
     <label for="title">Название</label>
     <div>
         <input type="text" name="title">
@@ -21,6 +21,9 @@
             <?php } ?>
         </ul>
     <?php } ?>
+    <div>
+        <input type="file" name="image">
+    </div>
     <div>
         <button type="submit">Загрузить</button>
     </div>

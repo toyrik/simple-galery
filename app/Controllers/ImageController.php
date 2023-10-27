@@ -11,6 +11,10 @@ class ImageController extends \App\Kernel\Controller\Controller
 
     public function store()
     {
+        $file = $this->request()->file('image');
+
+        $filePath = $file->move(date('Y-m-d'));
+
         $validation = $this->request()->validate(
             ['title' => ['required', 'min:3', 'max:255']]
         );
